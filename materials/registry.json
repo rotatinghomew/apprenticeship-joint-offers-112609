@@ -1,0 +1,93 @@
+{
+  "applicants": [
+    {
+      "id": "student-5",
+      "school": "west",
+      "preferences": [
+        "quality",
+        "installation"
+      ]
+    },
+    {
+      "id": "student-6",
+      "school": "east",
+      "preferences": [
+        "installation",
+        "quality"
+      ]
+    },
+    {
+      "id": "student-7",
+      "school": "west",
+      "preferences": [
+        "quality"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "quality",
+      "slots": [
+        "qa-1",
+        "qa-2"
+      ],
+      "months": [
+        "2027-01",
+        "2027-02"
+      ],
+      "start": "2027-01-18",
+      "gross_each": 420000,
+      "queue": [
+        "student-5",
+        "student-7",
+        "student-6"
+      ],
+      "eligible": [
+        "student-5",
+        "student-7"
+      ]
+    },
+    {
+      "id": "installation",
+      "slots": [
+        "it-1"
+      ],
+      "months": [
+        "2027-01",
+        "2027-02"
+      ],
+      "start": "2027-01-12",
+      "gross_each": 430000,
+      "queue": [
+        "student-6",
+        "student-5"
+      ],
+      "eligible": [
+        "student-5",
+        "student-6"
+      ]
+    }
+  ],
+  "slot_funding": [
+    {
+      "slot": "qa-1",
+      "tranches": [
+        "west-jan",
+        "west-feb",
+        "company-qa"
+      ]
+    },
+    {
+      "slot": "qa-2",
+      "tranches": [
+        "company-qa2"
+      ]
+    },
+    {
+      "slot": "it-1",
+      "tranches": [
+        "company-it"
+      ]
+    }
+  ]
+}

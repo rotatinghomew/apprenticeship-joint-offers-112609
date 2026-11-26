@@ -1,0 +1,174 @@
+{
+  "name": "apprenticeship-joint-offers",
+  "feeds": {
+    "sponsors": [
+      {
+        "sequence": 1,
+        "visible_at": 0,
+        "kind": "budget",
+        "data": {
+          "id": "west-jan",
+          "sponsor": "west",
+          "school": "west",
+          "route": "quality",
+          "month": "2027-01",
+          "cents": 130000
+        }
+      },
+      {
+        "sequence": 2,
+        "visible_at": 0,
+        "kind": "budget",
+        "data": {
+          "id": "west-feb",
+          "sponsor": "west",
+          "school": "west",
+          "route": "quality",
+          "month": "2027-02",
+          "cents": 130000
+        }
+      },
+      {
+        "sequence": 3,
+        "visible_at": 0,
+        "kind": "budget",
+        "data": {
+          "id": "company-qa",
+          "sponsor": "firm",
+          "school": "west",
+          "route": "quality",
+          "by_month": {
+            "2027-01": 290000,
+            "2027-02": 290000
+          }
+        }
+      },
+      {
+        "sequence": 4,
+        "visible_at": 0,
+        "kind": "budget",
+        "data": {
+          "id": "company-qa2",
+          "sponsor": "firm",
+          "school": "west",
+          "route": "quality",
+          "by_month": {
+            "2027-01": 420000,
+            "2027-02": 420000
+          }
+        }
+      },
+      {
+        "sequence": 5,
+        "visible_at": 0,
+        "kind": "budget",
+        "data": {
+          "id": "company-it",
+          "sponsor": "firm",
+          "school": null,
+          "route": "installation",
+          "by_month": {
+            "2027-01": 430000,
+            "2027-02": 430000
+          }
+        }
+      },
+      {
+        "sequence": 6,
+        "visible_at": 2,
+        "kind": "revoke",
+        "data": {
+          "id": "west-feb",
+          "sponsor": "west"
+        }
+      },
+      {
+        "sequence": 7,
+        "visible_at": 4,
+        "kind": "budget",
+        "data": {
+          "id": "emergency-feb",
+          "sponsor": "reserve",
+          "school": "west",
+          "route": "quality",
+          "month": "2027-02",
+          "cents": 130000
+        }
+      }
+    ],
+    "countersign": [
+      {
+        "sequence": 1,
+        "visible_at": 0,
+        "kind": "roster",
+        "data": {
+          "actor": "firm-legal",
+          "capacity": "employer"
+        }
+      },
+      {
+        "sequence": 2,
+        "visible_at": 0,
+        "kind": "roster",
+        "data": {
+          "actor": "west-bursar",
+          "capacity": "sponsor"
+        }
+      },
+      {
+        "sequence": 3,
+        "visible_at": 3,
+        "kind": "revocation_receipt",
+        "data": {
+          "sponsor": "west",
+          "tranche": "west-feb",
+          "unconfirmed_only": true
+        }
+      }
+    ]
+  },
+  "actions": {
+    "joint-sign": {
+      "fields": [
+        "applicant",
+        "slot",
+        "terms",
+        "shares"
+      ],
+      "default": {
+        "status": "received",
+        "final_status": "signed",
+        "finish": 1
+      },
+      "overrides": {
+        "qa-1": {
+          "reveal": 2,
+          "finish": 3
+        },
+        "qa-2": {
+          "status": "rejected",
+          "final_status": "rejected",
+          "finish": 0
+        }
+      }
+    },
+    "onboard": {
+      "fields": [
+        "applicant",
+        "slot",
+        "joint_request"
+      ],
+      "default": {
+        "status": "received",
+        "final_status": "enrolled",
+        "finish": 1
+      },
+      "overrides": {
+        "qa-1": {
+          "reveal": 2,
+          "finish": 3
+        }
+      }
+    }
+  }
+}
